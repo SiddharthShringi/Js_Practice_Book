@@ -38,9 +38,33 @@
 // // and implement a method called teach which receives a string called subject, and prints out.
 
 function Person(name) {
-    this.name = name
+    this.teacher = name
 }
 
 Person.prototype.teach = function(subject) {
-    console.log(`${this.name} teaches ${subject}.`)
+    console.log(`${this.teacher} is a ${subject} teacher.`)
 }
+// Define a constructor function called Persone which takes three arguments
+//(name, yearOfBirth, job) Initiate the properties
+
+function Human(name, yearOfBirth, job) {
+    this.name = name;
+    this.yob = yearOfBirth;
+    this.job = job;
+}
+
+
+// Define a function name calculateAge which returns the age of the person
+Human.prototype.calculateAge = function() {
+    const currentyear = new Date;
+    let age = currentyear.getFullYear() - this.yob;
+    return age;
+}
+
+
+// Use constructor function to make three objects with different values for example ('John', 1990, 'teacher')
+
+let ramesh = new Human('Ramesh', 1993, 'Sniper')
+
+// call the calculateAge function on each object
+console.log(ramesh.calculateAge())

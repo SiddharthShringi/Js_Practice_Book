@@ -55,3 +55,35 @@ let rabbitActivity = {
 
 // To make HerbivorousActivity prototype of rabbitActivity
 Object.setPrototypeOf(rabbitActivity, HerbivorousActivity);
+
+// Function for creating cow and horse
+
+function Cow(name, age) {
+	let newCow = Herbivorous(name, age);
+	Object.setPrototypeOf(newCow, cowActivity);
+	return newCow;
+}
+
+function Horse(name, age) {
+	let newHorse = Herbivorous(name, age);
+	Object.setPrototypeOf(newHorse, horseActivity);
+	return newHorse;
+}
+
+// Object for horseActivity and cowActivity
+
+let cowActivity = {
+	giveMilk: function() {
+		console.log(`No I don't give, they took it without my conscent`);
+	}
+}
+
+let horseActivity = {
+	runfast: function() {
+		console.log(`Yes, Only if you feed me well`);
+	}
+}
+
+// to make HerbivorousActivity subprototype of cowActivity and horseActivity
+Object.setPrototypeOf(cowActivity, HerbivorousActivity);
+Object.setPrototypeOf(horseActivity, HerbivorousActivity);

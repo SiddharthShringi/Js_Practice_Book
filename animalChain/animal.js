@@ -36,6 +36,22 @@ let HerbivorousActivity = {
 }
 
 // To make animalActivity prototype of HerbivorousActivity
-
 Object.setPrototypeOf(HerbivorousActivity, animalActivity);
 
+
+// Make rabbit function 
+function Rabbit(name, age) {
+	let newRabbit = Herbivorous(name, age);
+	Object.setPrototypeOf(newRabbit, rabbitActivity);
+	return newRabbit;
+}
+
+// Object that contain all rabbit activity
+let rabbitActivity = {
+	jump: function() {
+		console.log(`My life is shit and that's the only cool thing that I do`);
+	}
+}
+
+// To make HerbivorousActivity prototype of rabbitActivity
+Object.setPrototypeOf(rabbitActivity, HerbivorousActivity);

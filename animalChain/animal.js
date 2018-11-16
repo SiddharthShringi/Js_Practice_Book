@@ -10,6 +10,7 @@ function AnimalCreator(name, age) {
 
 // Object which has all the activity function that 
 // all the animals do
+// Herbivorous Tree
 let animalActivity = {
 	eat: function() {
 		console.log(`I'm a living being and for survival I've to eat`);
@@ -87,3 +88,61 @@ let horseActivity = {
 // to make HerbivorousActivity subprototype of cowActivity and horseActivity
 Object.setPrototypeOf(cowActivity, HerbivorousActivity);
 Object.setPrototypeOf(horseActivity, HerbivorousActivity);
+
+// Carnivorous Tree
+// Function for creating carnivorous animals
+function Carnivorous(name, age) {
+	let newCarnivorous = AnimalCreator(name, age);
+	Object.setPrototypeOf(newCarnivorous, carnivorousActivity);
+	return newCarnivorous;
+}
+
+// Object that has carnivorous activity
+let carnivorousActivity = {
+	eatFlesh: function() {
+		console.log(`I love to eat flesh`);
+	}
+}
+
+// Making animalActivity prototype of Carnivorous activity
+Object.setPrototypeOf(carnivorousActivity, animalActivity);
+
+function Dog(name, age) {
+	let newDog = Carnivorous(name, age);
+	Object.setPrototypeOf(newDog, dogActivity);
+	return newDog;
+}
+
+function Lion(name, age) {
+	let newLion = Carnivorous(name, age);
+	Object.setPrototypeOf(newLion, lionActivity);
+	return newLion;
+}
+
+function Tiger(name, age) {
+	let newTiger = Carnivorous(name, age);
+	Object.setPrototypeOf(newTiger, tigerActivity);
+	return newTiger;
+}
+
+let dogActivity = {
+	bark: function() {
+		console.log(`I do bark sir!`);
+	}
+}
+
+let lionActivity = {
+	roar: function() {
+		console.log(`When I roar you will shit in your pant`);
+	}
+}
+
+let tigerActivity = {
+	fastrunner: function() {
+		console.log(`I'm proud of my speed`);
+	}
+}
+
+Object.setPrototypeOf(dogActivity, carnivorousActivity);
+Object.setPrototypeOf(lionActivity, carnivorousActivity);
+Object.setPrototypeOf(tigerActivity, carnivorousActivity);

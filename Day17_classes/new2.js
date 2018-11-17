@@ -35,7 +35,8 @@ class Cat {
     console.log(`${this.name} is ${this.statusFunc(this.happiness)} happy.`);
 }
 
-  changeStatus(state, amount, x) {
+  changeStatus(state, amount) {
+    var x = +(prompt(`Press 1 for increment and press 0 for decrement.`));
     switch(state) {
       case "hunger": this.hunger =( x ? (this.hunger + amount) : (this.hunger - amount));
       break;
@@ -46,6 +47,13 @@ class Cat {
       case "lonliness": this.lonliness =( x ? (this.lonliness + amount) : (this.lonliness - amount));
       break;
     }
+    for(const key in this) {
+      if(!(key == "name")){
+        if(this[key] < 0) this[key] = 0;
+        if(this[key] > 10) this[key] =10;
+      }
+    }
+
   }
 }
 

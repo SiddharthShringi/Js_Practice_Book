@@ -1,6 +1,32 @@
 // The Car and the Truck have similar behavior and properties.
 // Rewrite them in a way such that they share those properties.
 
+class Vehicle {
+	constructor(driverName){
+		this.driverName = driverName;
+		this.speed = 0;
+	}
+	drive(mph) {
+		this.speed = mph;
+		return this.driverName + ' is driving at ' + mph + ' miles per hour';
+	}
+}
+
+class Truck extends Vehicle {
+	constructor(driverName) {
+		super(driverName)
+		this.cargo = [];
+	}
+
+	loadCargo(cargo) {
+		this.cargo.push(cargo);
+		return this.cargo;
+	}
+
+	unloadCargo() {
+		return this.cargo.pop();
+	}
+}
 // var Vehicle = function(driver, type=car) {
 //     if (type == 'car') {
 //         let this.

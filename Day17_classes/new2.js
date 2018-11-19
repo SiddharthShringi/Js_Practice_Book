@@ -90,3 +90,40 @@ class Cat {
   // Change the last book read to be the book that just got finished
   // Change the current book to be the next book to be read
   // Change the next book to be read property to be the first unread book you find in the list of books
+
+
+class bookList {
+  constructor() {
+    this.bookArray = [];
+    this.markedRead = 0;
+    this.markedNotRead = 0;
+    this.nextReadBookIndex = 0;
+    this.currentReadBookIndex = 0;
+    this.lastReadBookIndex = 0;
+  }
+
+  addBook(book) {
+    this.bookArray.push(book);
+  }
+
+  updateBookStatus(){
+    
+  }
+
+  
+
+  finishCurrentBook(){
+
+  }
+}
+
+
+class Book {
+  constructor(title, author, genre, readStatus, readDate) {
+    this.title = title;
+    this.author = author;
+    this.genre = genre;
+    this.readStatus;
+    this.readDate = new
+  }
+}
